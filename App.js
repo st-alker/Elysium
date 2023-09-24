@@ -1,6 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
+import config from './config.js';
+
 import MapView from "@teovilla/react-native-web-maps";
 import { ClusterProps, Marker, MarkerClusterer } from '@teovilla/react-native-web-maps';
 import type { Region } from 'react-native-maps';
@@ -51,7 +53,7 @@ export default function App() {
         provider="google"
         style={{ flex: 1 }}
         loadingFallback={loadingFallback}
-        googleMapsApiKey={"GOOGLE_MAPS_API_KEY"}
+        googleMapsApiKey={config.googleMapsAPIKey}
         mapType={"satellite"}
         initialRegion ={{
           latitude: 37.019163,
